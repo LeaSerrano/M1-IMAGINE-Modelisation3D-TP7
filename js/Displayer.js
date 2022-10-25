@@ -165,7 +165,7 @@ class Displayer {
 
     //dessin segment entre points en coordonnées "canvas"
     pDrawLine(x1, y1, x2, y2) {
-        this.g2d.strokeStyle = Couleur.lc;
+        this.g2d.strokeStyle = this.colors.lc;
         this.g2d.beginPath();
         this.g2d.moveTo(x1, y1);
         this.g2d.lineTo(x2, y2);
@@ -174,7 +174,7 @@ class Displayer {
 
     //dessin segment entre points en coordonnées "canvas"
     pDrawOrientedLine(x1, y1, x2, y2) {
-        this.g2d.strokeStyle = Couleur.lc;
+        this.g2d.strokeStyle = this.colors.lc;
         this.g2d.beginPath();
         this.g2d.moveTo(x1, y1);
 

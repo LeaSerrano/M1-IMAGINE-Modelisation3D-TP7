@@ -20,6 +20,12 @@ class Test {
         this.d.drawPoints(this.getPoints(), false);
 
         //todo
+
+        //Ex1
+        let points = this.getPoints();
+        for(let i = 0; i < points.length-2; i+=3) {
+            this.d.drawTour(Coord2D.tour(points[i], points[i+1], points[i+2]), points, true);
+        }
     }
 
     setUI(_controlPanel, _displayer) {

@@ -34,10 +34,32 @@ class Coord2D {
     // v1 et v2 sont des vecteurs du plan représentés par leurs coordonnées en 2D
     static detSign(v1, v2) {
         //todo
+        let det = this.determinant(v1, v2);
+
+        if (det > 0) {
+            return +1;
+        }
+        else if (det < 0) {
+            return -1;
+        } 
+        else {
+            return 0;
+        }
     }
 
     static tour(o, p1, p2) {
         //todo
+        let det = this.detSign(this.vecteur(o, p1), this.vecteur(o, p2));
+       
+        if (det == +1) {
+            return +1;
+        }
+        else if (det == -1) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
      }
 
     // donne la position relative de p1 et de p2 dans un ordre trigonométrique, centré sur l'origine
