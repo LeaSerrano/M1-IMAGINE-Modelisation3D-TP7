@@ -231,6 +231,23 @@ class Displayer {
         this.colors.restore();
     }
 
+    //
+    //Fonction que j'ai ajoutée pour faire correctement le tour (drawTour ne le fait que pour les 3 premiers points)
+    myDrawTour(tour, point1, point2, point3, points, incrementalDrawing) {
+        this.setOptions(points, incrementalDrawing);
+        this.colors.save();
+        this.colors.lc = (tour == 1) ? this.colors.left : (tour == -1) ? this.colors.right : this.colors.fg;
+        this.mDrawLine(point1, point2);
+        this.mDrawPoint(point1);
+        this.mDrawArrow(point2, point3);
+        this.mDrawPoint(point2);
+
+        this.colors.fg = this.colors.lc;
+        this.mDrawPoint(point3);
+        this.colors.restore();
+    }
+    //
+
     //dessin d'un tableau de points et d'une ligne qui relie chaque
     //point à son suivant (dans le tableau) et le dernier au premier
     drawLineLoop(points, incrementalDrawing) {

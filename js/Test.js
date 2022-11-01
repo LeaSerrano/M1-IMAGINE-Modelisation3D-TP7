@@ -23,9 +23,8 @@ class Test {
 
         //Ex1
         let points = this.getPoints();
-        for(let i = 0; i < points.length-2; i+=3) {
-            this.d.drawTour(Coord2D.tour(points[i], points[i+1], points[i+2]), points, true);
-        }
+        this.d.myDrawTour(Coord2D.tour(points[0], points[1], points[2]), points[0], points[1], points[2], points, true);
+        this.d.myDrawTour(Coord2D.tour(points[0], points[5], points[4]), points[0], points[5], points[4], points, true);
     }
 
     setUI(_controlPanel, _displayer) {

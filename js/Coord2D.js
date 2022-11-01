@@ -36,10 +36,11 @@ class Coord2D {
         //todo
         let det = this.determinant(v1, v2);
 
-        if (det > 0) {
-            return +1;
+        //console.log(det);
+        if (det > 1) {
+            return 1;
         }
-        else if (det < 0) {
+        else if (det < -1) {
             return -1;
         } 
         else {
@@ -49,10 +50,10 @@ class Coord2D {
 
     static tour(o, p1, p2) {
         //todo
-        let det = this.detSign(this.vecteur(o, p1), this.vecteur(o, p2));
-       
-        if (det == +1) {
-            return +1;
+        let det = this.detSign(this.vecteur(o, p1), this.vecteur(p1, p2));
+       console.log(det);
+        if (det == 1) {
+            return 1;
         }
         else if (det == -1) {
             return -1;
