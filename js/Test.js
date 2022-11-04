@@ -21,10 +21,50 @@ class Test {
 
         //todo
 
-        //Ex1
         let points = this.getPoints();
-        this.d.myDrawTour(Coord2D.tour(points[0], points[1], points[2]), points[0], points[1], points[2], points, true);
-        this.d.myDrawTour(Coord2D.tour(points[0], points[5], points[4]), points[0], points[5], points[4], points, true);
+        //Ex1
+        /*this.d.myDrawTour(Coord2D.tour(points[0], points[1], points[2]), points[0], points[1], points[2], points, true);
+        this.d.myDrawTour(Coord2D.tour(points[0], points[5], points[4]), points[0], points[5], points[4], points, true);*/
+
+        //Ex3
+        console.clear();
+        const ec = new EnveloppeConvexe(points, 1);
+
+        //Test findMin
+        /*let min = Coord2D.findMinIdx(points);
+        console.log(min);*/
+
+        //Test findNext
+        /*let next1 = ec.findNextIdx(points[0], points);
+        this.d.mDrawLine(points[0], next1);
+
+        let next2 = ec.findNextIdx(points[1], points);
+        this.d.mDrawLine(points[1], next2);
+
+        let next3 = ec.findNextIdx(points[2], points);
+        this.d.mDrawLine(points[2], next3);
+
+        let next4 = ec.findNextIdx(points[3], points);
+        this.d.mDrawLine(points[3], next4);
+
+        let next5 = ec.findNextIdx(points[5], points);
+        this.d.mDrawLine(points[5], next5);*/
+
+        //Test algo Jarvis
+        /*let resultat = ec.algoJarvis(points);
+
+        for (let i = 0; i < resultat.length-1; i++) {
+            this.d.mDrawLine(resultat[i], resultat[i+1]);
+        }*/
+
+        //Ex2
+        //Test algo Demi Plan
+        let resultat = ec.algoDemiPlan(points);
+
+        for (let i = 0; i < resultat.length-1; i++) {
+            this.d.mDrawLine(points[resultat[i]], points[resultat[i+1]]);
+        }
+
     }
 
     setUI(_controlPanel, _displayer) {

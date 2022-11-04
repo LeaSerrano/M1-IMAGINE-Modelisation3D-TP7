@@ -36,7 +36,6 @@ class Coord2D {
         //todo
         let det = this.determinant(v1, v2);
 
-        //console.log(det);
         if (det > 1) {
             return 1;
         }
@@ -51,7 +50,7 @@ class Coord2D {
     static tour(o, p1, p2) {
         //todo
         let det = this.detSign(this.vecteur(o, p1), this.vecteur(p1, p2));
-       console.log(det);
+
         if (det == 1) {
             return 1;
         }
@@ -74,6 +73,18 @@ class Coord2D {
 
     static findMinIdx(points) {
         //todo
+        let minY = points[0].y;
+        for (let i = 1; i < points.length; i++) {
+            if (points[i].y < minY) {
+                minY = points[i].y;
+            }
+        }
+
+        for (let i = 0; i < points.length; i++) {
+            if (points[i].y == minY) {
+                return i;
+            }
+        }
     }
 
     toString() {
